@@ -6,6 +6,17 @@ terraform {
     }
   }
   required_version = ">= 1.7"
+
+  backend "s3" {
+    # The bucket we are going to store our state
+    bucket = "terraform-state-bucket-saldf234"
+    key = "stage/services/webserver-cluster/terraform.tfstate"
+    region = "us-east-1"
+
+    # The dynamoDB used to lock the state
+    dynamodb_table = "terraform-locks"
+    encrypt = true
+  }
 }
 
 provider "aws" {
