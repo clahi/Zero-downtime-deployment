@@ -51,7 +51,11 @@ resource "aws_launch_configuration" "web_servers" {
   instance_type   = "t3.micro"
   security_groups = [aws_security_group.instance.id]
 
-  user_data = filebase64("${path.module}/scripts/user_data.sh")
+  user_data = templatefile("${path.module}/scripts/user_data.sh", {
+    server_port = var.server_port
+    db_address = data.terraform_remote_state.db.outputs.address
+    db_port = data.terraform_remote_state.db.outputs.port
+  })
 
   # Required when using a launch configuration with an auto scaling group
   lifecycle {
@@ -153,5 +157,16 @@ resource "aws_lb_listener_rule" "asg" {
   action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.asg.arn
+  }
+}
+
+# Getting outputs from the remote state file of mysql database stored in s3 bucket at the path stage/data-stores/mysql/terraform.tfstate
+data "terraform_remote_state" "db" {
+  backend = "s3"
+
+  config = {
+    bucket = "terraform-state-bucket-saldf234"
+    key = "stage/data-stores/mysql/terraform.tfstate"
+    region = "us-east-1"
   }
 }
