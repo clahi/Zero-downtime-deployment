@@ -10,12 +10,12 @@ terraform {
   backend "s3" {
     # The bucket we are going to store our state
     bucket = "terraform-state-bucket-saldf23"
-    key    = "stage/services/webserver-cluster/terraform.tfstate"
+    key = "prod/services/webserver-cluster/terraform.tfstate"
     region = "us-east-1"
 
     # The dynamoDB used to lock the state
     dynamodb_table = "terraform-locks"
-    encrypt        = true
+    encrypt = true
   }
 }
 
@@ -27,11 +27,11 @@ module "webserver_cluster" {
   source = "../../../modules/services/webserver-cluster"
 
   # The input variables to be used in the module.
-  cluster_name           = "webservers-stage"
+  cluster_name = "webservers-prod"
   db_remote_state_bucket = "terraform-state-bucket-saldf23"
-  db_remote_state_key    = "stage/data-stores/mysql/terraform.tfstate"
+  db_remote_state_key = "prod/data-stores/mysql/terraform.tfstate"
 
-  instance_type = "t2.micro"
-  min_size      = 2
-  max_size      = 2
+  instance_type = "t3.micro"
+  min_size = 2
+  max_size = 10
 }

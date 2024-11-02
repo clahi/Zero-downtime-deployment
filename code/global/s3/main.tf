@@ -9,7 +9,7 @@ terraform {
 
   backend "s3" {
     # The bucket we are going to store our state
-    bucket = "terraform-state-bucket-saldf234"
+    bucket = "terraform-state-bucket-saldf23"
     key = "global/s3/terraform.tfstate"
     region = "us-east-1"
 
@@ -24,7 +24,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-state-bucket-saldf234"
+  bucket = "terraform-state-bucket-saldf23"
 
   # Prevent accidental deletion of this s3 bucket
   # lifecycle {
