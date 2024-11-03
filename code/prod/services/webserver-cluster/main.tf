@@ -7,16 +7,16 @@ terraform {
   }
   required_version = ">= 1.7"
 
-  backend "s3" {
-    # The bucket we are going to store our state
-    bucket = "terraform-state-bucket-saldf23"
-    key = "prod/services/webserver-cluster/terraform.tfstate"
-    region = "us-east-1"
+  # backend "s3" {
+  #   # The bucket we are going to store our state
+  #   bucket = "terraform-state-bucket-saldf234"
+  #   key = "prod/services/webserver-cluster/terraform.tfstate"
+  #   region = "us-east-1"
 
-    # The dynamoDB used to lock the state
-    dynamodb_table = "terraform-locks"
-    encrypt = true
-  }
+  #   # The dynamoDB used to lock the state
+  #   dynamodb_table = "terraform-locks"
+  #   encrypt = true
+  # }
 }
 
 provider "aws" {
@@ -28,10 +28,17 @@ module "webserver_cluster" {
 
   # The input variables to be used in the module.
   cluster_name = "webservers-prod"
-  db_remote_state_bucket = "terraform-state-bucket-saldf23"
+  db_remote_state_bucket = "terraform-state-bucket-saldf234"
   db_remote_state_key = "prod/data-stores/mysql/terraform.tfstate"
 
   instance_type = "t3.micro"
   min_size = 2
   max_size = 10
+
+  custom_tags = {
+    Owner = "terraform-owner"
+    ManagedBy = "terraform"
+  }
+
+  enable_autoscaling = true
 }

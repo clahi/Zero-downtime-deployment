@@ -9,8 +9,8 @@ terraform {
 
   # backend "s3" {
   #   # The bucket we are going to store our state
-  #   bucket = "terraform-state-bucket-saldf23"
-  #   key = "stage/data-stores/mysql/terraform.tfstate"
+  #   bucket = "terraform-state-bucket-saldf234"
+  #   key = "global/iam/terraform.tfstate"
   #   region = "us-east-1"
 
   #   # The dynamoDB used to lock the state
@@ -23,14 +23,15 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_db_instance" "db_instance" {
-  identifier_prefix = "state-db-instance"
-  engine = "mysql"
-  allocated_storage = 10
-  instance_class = "db.t3.micro"
-  skip_final_snapshot = true
-  db_name = "stage_database"
-
-  username = var.db_username
-  password = var.db_password
+module "user" {
+  source = "../../modules/landing-zone/iam-user"
+  
+  for_each = toset(var.user_names)
+  user_name = each.value
 }
+
+# resource "aws_iam_user" "user" {
+#   for_each = toset(var.user_names)
+#   name = each.value
+# }
+
