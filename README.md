@@ -17,7 +17,7 @@ Typically we need at least two environments: one for your team's internal testin
 ## The infrastructure
 ![infrastructure](images/infrastructure.png)
 
-### Problem
+# Problem
 How do you add this production environment without having to copy and
 paste all of the code from staging? For example, how do you avoid having
 to copy and paste all the code in stage/services/webserver-cluster into
@@ -32,7 +32,8 @@ environments, you’ll be able to have both environments reuse code from the
 same module.
 
 ## The file structure
-![infrastructure](images/file-structure.png)
+![file-structure](images/file-structure.png)
+
 # Zero-downtime deployment
 Now that our module has a clean and simple API for deploying a web
 server cluster, an important question to ask is, how do you update that
@@ -43,7 +44,11 @@ This problem can be overcome by using AWS native solution called instance refres
 
 ## Images demostrating Zero-downtime deployment.
 ![stage](images/stage1.png)
+
 ![stage2](images/stage2.png)
+
 ![stage3](images/stage3.png)
+
 ![stage4](images/stage4.png)
+
 ![final-stage](images/final-stage.png)
