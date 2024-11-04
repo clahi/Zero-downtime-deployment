@@ -15,7 +15,7 @@ With a remote backend and locking, collaboration is no longer a problem.
 Typically we need at least two environments: one for your team's internal testing ("Staging") and one that real users can access("production"). Ideally, the two environments are nearly identical, though you might run slightly fewer/smaller servers in staging to save money.
 
 ## The infrastructure
-![Infrastructure](images/file-structure.png)
+![infrastructure](images/infrastructure.png)
 
 ### Problem
 How do you add this production environment without having to copy and
@@ -32,7 +32,7 @@ environments, you’ll be able to have both environments reuse code from the
 same module.
 
 ## The file structure
-![File-structure](images/infrastructure.png)
+![File-structure](images/file-structure.png)
 
 # Zero-downtime deployment
 Now that our module has a clean and simple API for deploying a web
@@ -44,7 +44,7 @@ This problem can be overcome by using AWS native solution called instance refres
 
 ## Images demostrating Zero-downtime deployment.
 ![stage1](images/stage1.png)
-![stage1](images/stage2.png)
-![stage1](images/stage3.png)
-![stage1](images/stage4.png)
-![stage1](images/final-stage.png)
+![stage2](images/stage2.png)
+![stage3](images/stage3.png)
+![stage4](images/stage4.png)
+![final-stage](images/final-stage.png)
