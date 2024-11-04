@@ -44,11 +44,7 @@ This problem can be overcome by using AWS native solution called instance refres
 
 ## Images demostrating Zero-downtime deployment.
 ![stage](images/stage1.png)
-
 ![stage2](images/stage2.png)
-
 ![stage3](images/stage3.png)
-
 ![stage4](images/stage4.png)
-
 ![final-stage](images/final-stage.png)
