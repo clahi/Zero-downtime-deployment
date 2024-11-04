@@ -42,7 +42,7 @@ do it without causing downtime for your users?
 This problem can be overcome by using AWS native solution called instance refresh.
 
 ## Images demostrating Zero-downtime deployment.
-![stage1](images/stage1.png)
+![stage](images/stage1.png)
 ![stage2](images/stage2.png)
 ![stage3](images/stage3.png)
 ![stage4](images/stage4.png)
