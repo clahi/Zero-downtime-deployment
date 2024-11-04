@@ -32,7 +32,7 @@ environments, you’ll be able to have both environments reuse code from the
 same module.
 
 ## The file structure
-![file-structure](images/file-structure.png)
+![file-structure](images/file-structure.PNG)
 
 # Zero-downtime deployment
 Now that our module has a clean and simple API for deploying a web
@@ -43,8 +43,8 @@ do it without causing downtime for your users?
 This problem can be overcome by using AWS native solution called instance refresh.
 
 ## Images demostrating Zero-downtime deployment.
-![stage](images/stage1.png)
-![stage2](images/stage2.png)
-![stage3](images/stage3.png)
-![stage4](images/stage4.png)
-![final-stage](images/final-stage.png)
+![stage1](images/stage1.PNG)
+![stage2](images/stage2.PNG)
+![stage3](images/stage3.PNG)
+![stage4](images/stage4.PNG)
+![final-stage](images/final-stage.PNG)
