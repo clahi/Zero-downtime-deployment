@@ -4,7 +4,7 @@ In this project we are going to deploy a cluster of web servers using the follow
 - A Load Balancer to distribute traffic across the servers.
 
 ## Sate management
-For managing the terraform state, I have used an S3 bucket as the reomte backend.
+For managing the terraform state, I have used an S3 bucket as the remote backend.
 The following are the advantages of S3 as the backend for state management.
  - It's a managed service, so you don't need to deploy and manage extra infrastructure to use it.
  - It supports locking via DynamoDB.
