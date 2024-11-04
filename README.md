@@ -46,4 +46,5 @@ This problem can be overcome by using AWS native solution called instance refres
 ![stage1](images/stage1.PNG)
 ![stage2](images/stage2.PNG)
 ![stage3](images/stage3.PNG)
-![stage4](images/stage4.PNG) ![final-stage](images/final-stage.PNG)
+![stage4](images/stage4.PNG)
+![final-stage](images/final-stage.PNG)
