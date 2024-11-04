@@ -32,7 +32,7 @@ environments, you’ll be able to have both environments reuse code from the
 same module.
 
 ## The file structure
-![file-structure](images/file-structure.png)
+![infrastructure](images/file-structure.png)
 # Zero-downtime deployment
 Now that our module has a clean and simple API for deploying a web
 server cluster, an important question to ask is, how do you update that
