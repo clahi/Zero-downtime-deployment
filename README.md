@@ -1,7 +1,8 @@
-# A multi-environment
+# Zero-downtime deployment
 Typically we need at least two environments: one for your team's internal testing ("Staging") and one that real users can access("production"). Ideally, the two environments are nearly identical, though you might run slightly fewer/smaller servers in staging to save money.
 
 ## The infrastructure
+![Infrastructure](images/infrastructure.png)
 ![Infrastructure](images/infrastructure.png)
 
 ### Problem
